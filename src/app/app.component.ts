@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Gretagram';
-  constructor(public http: HttpClient) {}
+  title = 'gretagram';
+  isAuth: boolean;
 
-  public ping() {
-    this.http.get('https://localhost')
-      .subscribe(
-        data => console.log(data),
-        err => console.log(err)
-      );
+  constructor(
+    private authGuard:  AuthGuardService, 
+  ){}
+
+  onSignOut(){
+    this.authGuard.logout();
+    this.isAuth = this.authGuard.isConnected;
   }
 }
