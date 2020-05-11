@@ -8,7 +8,7 @@ import { SinginComponent } from './auth/singin/singin.component';
 import { SingupComponent } from './auth/singup/singup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuardService } from './auth-guard.service';
+import { AuthGuardService } from './services/auth-guard.service';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({

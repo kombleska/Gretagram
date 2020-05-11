@@ -1,0 +1,19 @@
+{
+    "/users": {
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+    "/friends": {
+        "target": "http://localhost:3000",
+        "secure": false
+    },
+    "/commentaires": {
+        "target": "http://localhost:3000",
+        "secure": false
+    }, 
+    "/publications": {
+        "target": "http://localhost:3000",
+        "secure": false
+    }
+}
+    
