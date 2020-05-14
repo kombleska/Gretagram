@@ -4,7 +4,7 @@
       <img src="favicon.ico" width="30" height="30" alt="">
     </a>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="isAuth">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown" routerLinkActive="active">
           <a class="nav-link dropdown-toggle" routerLink="/home" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

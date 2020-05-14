@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppComponent } from 'src/app/app.component';
+import { AuthService } from 'src/app/services/authService';
 
 
 @Component({
@@ -11,13 +12,16 @@ import { AppComponent } from 'src/app/app.component';
 export class SingupComponent implements OnInit {
 
   authForm : FormGroup;
-  errorMessage : string;
-  user: any;
+  message : string;
+  newUser: boolean;
+  errorMessage: string;
 
   constructor(
     private formBuilder : FormBuilder,
-    private val: AppComponent
-  ) { }
+    private auth: AuthService
+  ) { 
+    this.newUser = false;
+  }
 
   ngOnInit() {
     this.initForm();
@@ -26,20 +30,21 @@ export class SingupComponent implements OnInit {
   initForm(){
     this.authForm = this.formBuilder.group({
       mail:  ['', [Validators.required, Validators.email]],
-      password:  ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
+      password:  ['', [Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]],
+      phone:  [''],
+      address:  ['']
     });
   }
 
-  userValidator(valueForm){
-    this.user = {
-      "id" : valueForm['mail'],
-      "mail": valueForm['mail'],
-      "pw": valueForm['password']
-    };
-  }
-
   onSubmitForm(){
-
+    const formValue = this.authForm.value;
+    if(this.auth.getOneUser(formValue['mail'])){
+      this.errorMessage = 'Mail aldrely use !'
+    } else {
+      this.auth.addUser(formValue['mail'],formValue['password'], formValue['phone'], formValue['address']);
+      this.newUser = true;
+      this.message = "New User created ! Can you connect to the app ;) ";
+    }
   }
 
 }

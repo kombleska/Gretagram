@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthGuardService } from './services/authGuardService';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,11 @@ export class AppComponent {
   isAuth: boolean;
 
   constructor(
+    private authGuard:  AuthGuardService, 
   ){}
 
   onSignOut(){
+    this.authGuard.logout();
+    this.isAuth = this.authGuard.isConnected;
   }
 }
