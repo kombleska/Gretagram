@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
-import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
@@ -17,8 +15,6 @@ export class SinginComponent implements OnInit {
 
   constructor(
     private formBuilder : FormBuilder,
-    private auth: AuthService,
-    private authGuard: AuthGuardService,
     private val: AppComponent
   ) { }
 
@@ -34,12 +30,6 @@ export class SinginComponent implements OnInit {
   }
 
   onSubmitForm(){
-    const formValue = this.authForm.value;
-    console.log(formValue);
-    this.user = this.auth.loginApp(formValue['mail'], formValue['password']);
-    console.log(this.user);
-    this.authGuard.changeGuard(this.user.id);
-    this.val.isAuth = this.authGuard.isConnected;
   }
 
 }

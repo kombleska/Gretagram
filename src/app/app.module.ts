@@ -8,8 +8,11 @@ import { SinginComponent } from './auth/singin/singin.component';
 import { SingupComponent } from './auth/singup/singup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuardService } from './services/auth-guard.service';
 import { HomeComponent } from './home/home.component';
+import { InfosComponent } from './user/infos/infos.component';
+import { StatComponent } from './user/stat/stat.component';
+import { PubliComponent } from './user/publi/publi.component';
+import { ResearchComponent } from './research/research.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,11 @@ import { HomeComponent } from './home/home.component';
     AuthComponent,
     SinginComponent,
     SingupComponent,
-    HomeComponent
+    HomeComponent,
+    InfosComponent,
+    StatComponent,
+    PubliComponent,
+    ResearchComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AuthGuardService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
