@@ -7,6 +7,7 @@ import { AuthGuardService } from './authGuardService';
 })
 export class FriendsService {
     private friends : Friends[];
+    private myF: string[];
 
     constructor(private authGuard : AuthGuardService){
         this.friends = [
@@ -27,6 +28,7 @@ export class FriendsService {
                 "userFriend": "fabien@admin.fr",
             },
         ];
+        this.myF = [];
     }
 
     getAll(){
@@ -40,6 +42,15 @@ export class FriendsService {
                 "userFriend": mail2,
             }
         );
+    }
+
+    getFriendUser(user: string){
+        for(var i = 0 ; i < this.friends.length; i++){
+            if(this.friends[i].userActif == user){
+                this.myF.push(this.friends[i].userFriend);
+            }
+        }
+        return this.myF;
     }
 
     

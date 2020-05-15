@@ -16,7 +16,7 @@ export class PubliService {
                 "url": "./assets/images/picture2.png"
             },
             {
-                "user": "admin@admin.fr",
+                "user": "fabien@admin.fr",
                 "name": "after beach",
                 "descri":"Beark",
                 "url": "./assets/images/picture1.png"
