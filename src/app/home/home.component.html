@@ -1,0 +1,15 @@
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let publi of allPubli" > 
+            <h4><img src="favicon.ico" width="30" height="30" alt=""> - {{publi.user}} -- {{publi.name}}</h4>
+            <p>{{publi.descri}}</p> 
+            <img src="{{publi.url}}" 
+            style="
+            max-width: 4cm;
+            max-height: 3cm; 
+            display: block;
+            margin-left: auto;
+            margin-right: auto">
+        </li>
+    </ul>
+</div>

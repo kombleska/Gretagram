@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Publi } from '../models/publi';
+import { User } from '../models/user';
+import { PubliService } from '../services/publiService';
+import { AuthGuardService } from '../services/authGuardService';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  allPubli: Publi[];
+  user: User;
+
+  constructor(
+    private publis : PubliService,
+    private auth : AuthGuardService) { 
+      this.user = this.auth.userId;
+      this.allPubli =[];
+   }
 
   ngOnInit() {
+    this.allPubli = this.publis.getAll();
+    this.user = this.auth.userId;
   }
 
 }
