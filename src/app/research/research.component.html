@@ -1,1 +1,33 @@
-<p>research works!</p>
+<div class="contenair">
+    <div class="row">
+        <div class="col">
+            <h4 style="text-align:center"> Friend Search </h4>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">@</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let user of afficheUserName" > 
+                    <h4><img src="favicon.ico" width="30" height="30" alt=""> - {{user}}</h4>
+                    <div class="text-right">
+                        <button class="text-right"><i class="fas fa-user-friends"></i></button>
+                    </div>   
+                </li>
+            </ul>
+        </div>
+        <br>
+        <div class="col">
+            <div class="row">
+                <h4 style="text-align:center"> Event Search </h4>
+                <div id="frugalmap">
+            </div>
+            </div>
+            <div class="row">
+                <h4> No event </h4>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -8,16 +8,17 @@ import { PubliComponent } from './user/publi/publi.component';
 
 import { HomeComponent } from './home/home.component';
 import { ResearchComponent } from './research/research.component';
+import { AuthGuardService } from './services/authGuardService';
 
 
 
 const routes: Routes = [
   {path:'', component:AuthComponent},
-  {path:'home', component:HomeComponent},
-  {path:'user', component:InfosComponent},
-  {path:'stat', component:StatComponent},
-  {path:'publi', component: PubliComponent}, 
-  {path:'research', component: ResearchComponent},
+  {path:'home',canActivate : [AuthGuardService], component:HomeComponent},
+  {path:'user',canActivate : [AuthGuardService], component:InfosComponent},
+  {path:'stat',canActivate : [AuthGuardService], component:StatComponent},
+  {path:'publi',canActivate : [AuthGuardService], component: PubliComponent}, 
+  {path:'research',canActivate : [AuthGuardService], component: ResearchComponent},
   {path: '**', redirectTo: ''}
 ];
 

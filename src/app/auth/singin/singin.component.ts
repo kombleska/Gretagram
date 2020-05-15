@@ -36,7 +36,7 @@ export class SinginComponent implements OnInit {
   onSubmitForm(){
     const formValue = this.authForm.value;
     if(this.auth.login(formValue['mail'], formValue['password'])){
-      this.authGuard.changeGuard(formValue['mail']);
+      this.authGuard.changeGuard(this.auth.getUser());
       this.val.isAuth = this.authGuard.isConnected;
     } else {
       this.errorMessage = this.auth.getErr();
