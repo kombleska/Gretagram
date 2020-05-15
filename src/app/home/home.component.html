@@ -1,0 +1,48 @@
+
+    <div class="row">
+        <div class="col">
+            <h4 style="text-align: left;"> My friends </h4>
+            <br>
+            <ul class="list-group">
+                <li class="list-group-item" >
+                    <h4><img src="favicon.ico" width="30" height="30" alt=""> - {{user.mail}}</h4>
+                </li>
+                <li class="list-group-item" *ngFor="let f of myFriend" >
+                    <h4><img src="favicon.ico" width="30" height="30" alt=""> - {{f}}</h4>
+                    <div class="text-right">
+                        <button class="text-right"><i class="fas fa-user-friends"></i></button>
+                    </div>  
+                </li>
+            </ul>  
+        </div>
+        <div class="col">
+            <h4 style="text-align: center;"> Publications </h4>
+            <br>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let publi of allPubli" > 
+                    <h4><img src="favicon.ico" width="30" height="30" alt=""> - {{publi.user}} -- {{publi.name}}</h4>
+                    <p>{{publi.descri}}</p> 
+                    <img src="{{publi.url}}" 
+                    style="
+                    max-width: 10cm;
+                    max-height: 7cm; 
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto">
+                    <div class="text-right">
+                        <button class="text-right"><i class="fas fa-heart"></i></button>
+                    </div>
+                      
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <h4 style="text-align: right;"> Event </h4>
+            <br>
+            <ul class="list-group">
+                <li class="list-group-item"> 
+                    <h4> Not Event </h4>
+                </li>
+            </ul>
+        </div>
+    </div>

@@ -70,6 +70,19 @@ export class AuthService {
         );
     }
 
+    changeInfo(mail: string, u: User){
+        for(var i = 0; i<this.users.length; i++){
+            if(this.users[i].mail == this.user.mail){
+                this.user[i] = {
+                    "mail": u.mail,
+                    "pw": u.pw,
+                    "phone":u.phone,
+                    "address": u.address
+                }
+            }
+        }
+    }
+
     getErr(){
         return this.err;
     }
