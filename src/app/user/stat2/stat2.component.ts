@@ -11,13 +11,12 @@ noData(Highcharts);
 More(Highcharts);
 noData(Highcharts);
 
-
 @Component({
   selector: 'app-stat2',
-  templateUrl: './stat.component.html',
-  styleUrls: ['./stat.component.css']
+  templateUrl: './stat2.component.html',
+  styleUrls: ['./stat2.component.css']
 })
-export class StatComponent2 implements OnInit {
+export class Stat2Component implements OnInit {
 
   public options: any = {
     chart: {
@@ -104,3 +103,4 @@ export class StatComponent2 implements OnInit {
   }
 
 }
+

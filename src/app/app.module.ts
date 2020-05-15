@@ -13,9 +13,9 @@ import { InfosComponent } from './user/infos/infos.component';
 import { StatComponent } from './user/stat/stat.component';
 import { PubliComponent } from './user/publi/publi.component';
 import { ResearchComponent } from './research/research.component';
-import { AllStatComponent } from './user/all-stat/all-stat.component';
-import { StatComponent2 } from './user/stat2/stat2.component';
-import { StatComponent3 } from './user/stat3/stat3.component';
+import { Stat2Component } from './user/stat2/stat2.component';
+import { Stat3Component } from './user/stat3/stat3.component';
+
 
 @NgModule({
   declarations: [
@@ -26,11 +26,10 @@ import { StatComponent3 } from './user/stat3/stat3.component';
     HomeComponent,
     InfosComponent,
     StatComponent,
-    StatComponent2,
-    StatComponent3,
     PubliComponent,
     ResearchComponent,
-    AllStatComponent
+    Stat2Component,
+    Stat3Component
   ],
   imports: [
     BrowserModule,

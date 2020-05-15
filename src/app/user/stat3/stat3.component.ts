@@ -11,13 +11,12 @@ noData(Highcharts);
 More(Highcharts);
 noData(Highcharts);
 
-
 @Component({
   selector: 'app-stat3',
-  templateUrl: './stat.component.html',
-  styleUrls: ['./stat.component.css']
+  templateUrl: './stat3.component.html',
+  styleUrls: ['./stat3.component.css']
 })
-export class StatComponent3 implements OnInit {
+export class Stat3Component implements OnInit {
 
   public options: any = {
     chart: {
@@ -74,5 +73,6 @@ export class StatComponent3 implements OnInit {
   ngOnInit() {
     Highcharts.chart('container', this.options);
   }
+
 
 }

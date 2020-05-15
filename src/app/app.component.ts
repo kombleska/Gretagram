@@ -9,13 +9,19 @@ import { AuthGuardService } from './services/authGuardService';
 export class AppComponent {
   title = 'gretagram';
   isAuth: boolean;
+  isStat: boolean;
 
   constructor(
-    private authGuard:  AuthGuardService, 
+    private authGuard:  AuthGuardService
   ){}
 
   onSignOut(){
     this.authGuard.logout();
     this.isAuth = this.authGuard.isConnected;
+    this.isStat = false;
+  }
+
+  changeStat(b: boolean){
+    this.isStat = b;
   }
 }
