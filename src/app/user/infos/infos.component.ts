@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/authService';
+import { AuthGuardService } from 'src/app/services/authGuardService';
 
 @Component({
   selector: 'app-infos',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfosComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+
+  constructor(
+    private auth : AuthService,
+    private guard: AuthGuardService
+    ) { 
+      this.user = this.auth.getUser();
+    }
 
   ngOnInit() {
   }

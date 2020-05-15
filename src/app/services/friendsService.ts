@@ -45,6 +45,7 @@ export class FriendsService {
     }
 
     getFriendUser(user: string){
+        this.myF = []
         for(var i = 0 ; i < this.friends.length; i++){
             if(this.friends[i].userActif == user){
                 this.myF.push(this.friends[i].userFriend);

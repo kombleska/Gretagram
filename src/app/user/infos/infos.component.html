@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="p-3 border bg-light">
+                <h4 style="text-align: center;"> Change Information </h4>
+                <hr>
+                <form>
+                    <div>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address">
+                        <br>
+                    </div>
+                    <div>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password">
+                        <br>
+                    </div>
+                    <div>
+                        <input type="password" id="inputPassword1" class="form-control" placeholder="Confirm Password">
+                        <br>
+                    </div>
+                    <div>
+                        <input type="text" id="inputPhone" class="form-control" placeholder="Phone">
+                        <br>
+                    </div>
+                    <div>
+                        <input type="text" id="inputAddress" class="form-control" placeholder="Address">
+                        <br>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" > Change </button>
+                </form>
+            </div>
+            
+        </div>
+        <div class="col p-3 border bg-light">
+            <img class="mb-4" src="../favicon.ico" alt="" width="72" height="72" 
+            style="display: block;
+            margin-left: auto;
+            margin-right: auto">
+            <h4 style="text-align: center;"> Information Save </h4>
+            <hr>
+            <h6>Mail: </h6>
+            <p style="margin-left: 5cm;"> {{user.mail}} </p>
+            <h6>Phone: </h6>
+            <p style="margin-left: 5cm;"> {{user.phone}} </p>
+            <h6>Address: </h6>
+            <p style="margin-left: 5cm;"> {{user.address}} </p>
+        </div>
+    </div>
+</div>
