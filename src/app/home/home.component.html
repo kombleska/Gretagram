@@ -16,7 +16,7 @@
             </ul>  
         </div>
         <div class="col">
-            <h4 style="text-align: center;"> Publication </h4>
+            <h4 style="text-align: center;"> Publications </h4>
             <br>
             <ul class="list-group">
                 <li class="list-group-item" *ngFor="let publi of allPubli" > 
@@ -24,11 +24,15 @@
                     <p>{{publi.descri}}</p> 
                     <img src="{{publi.url}}" 
                     style="
-                    max-width: 4cm;
-                    max-height: 3cm; 
+                    max-width: 10cm;
+                    max-height: 7cm; 
                     display: block;
                     margin-left: auto;
                     margin-right: auto">
+                    <div class="text-right">
+                        <button class="text-right"><i class="fas fa-heart"></i></button>
+                    </div>
+                      
                 </li>
             </ul>
         </div>

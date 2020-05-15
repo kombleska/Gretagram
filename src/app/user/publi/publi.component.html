@@ -1,75 +1,19 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-
-
-
-
-
-
-
-
-<form>
-     <div class="form-group">
-  
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-  </div>
-  <button type="button" class="btn btn-danger">Commenter</button>
-  </form>
-
-  <br>
-
-
-
-    <div class="card w-50">
-        
-        <div class="card-body">
-          <h5 class="card-title">Jeanne</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>        
-           <button type="button" class="btn btn-danger">J'aime</button>             
-          <button type="button" class="btn btn-secondary">J'aime pas</button>
-        <p class="card-text"><small class="text-muted">Il y a 3 minutes</small></p>
-        </div>
-      </div>
-       <br>
-
-      <div class="card w-75">
-      <div class="card-body">
-        <h5 class="card-title">Lucas</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>        
-     <button type="button" class="btn btn-danger">J'aime</button>             
-          <button type="button" class="btn btn-secondary">J'aime pas</button>
-      <p class="card-text"><small class="text-muted">Il y a 5 minutes</small></p>
-      </div>
-    </div>
-     <br>
-    <div class="card w-50">
-        <div class="card-body">
-          <h5 class="card-title">Marie Jeanne</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>        
-         <button type="button" class="btn btn-danger">J'aime</button>             
-          <button type="button" class="btn btn-secondary">J'aime pas</button>
-        <p class="card-text"><small class="text-muted">Il y a 2 heures</small></p>
-        </div>
-      </div>
-      
-  
-    
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
-</html>
+<h4 style="text-align: center;"> My Publications </h4>
+            <br>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let publi of allPubli" > 
+                    <h4><img src="favicon.ico" width="30" height="30" alt=""> - {{publi.user}} -- {{publi.name}}</h4>
+                    <p>{{publi.descri}}</p> 
+                    <img src="{{publi.url}}" 
+                    style="
+                    max-width: 20cm;
+                    max-height: 13cm; 
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto">
+                    <div class="text-right" style="vertical-align: 2px;">
+                      <button class="text-right"> <i class="fas fa-trash"></i> </button>
+                      <button class="text-right"> <i class="fas fa-heart"></i> </button>
+                  </div>  
+                </li>
+            </ul>
